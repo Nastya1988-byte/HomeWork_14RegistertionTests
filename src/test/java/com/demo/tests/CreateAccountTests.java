@@ -7,41 +7,33 @@ public class CreateAccountTests extends TestBase{
 
     @Test
     public void newUserRegistrationPositiveTest(){
+        int i = (int)((System.currentTimeMillis()/1000)%3600);
         //click on Register link
-        driver.findElement(By.xpath("//a[text()='Register']")).click();
+        click(By.xpath("//a[text()='Register']"));
+
         //select Gender
-        driver.findElement(By.id("gender-female")).click();
+//        driver.findElement(By.id("gender-female")).click();
+
         //First name enter
-        driver.findElement(By.id("FirstName")).click();
-        driver.findElement(By.id("FirstName")).clear();
-        driver.findElement(By.id("FirstName")).sendKeys("Anastasiia");
+        type(By.id("FirstName"), "Anastasiia");
 
         //Last name enter
-        driver.findElement(By.id("LastName")).click();
-        driver.findElement(By.id("LastName")).clear();
-        driver.findElement(By.id("LastName")).sendKeys("Buch");
+        type(By.id("LastName"), "Buch");
 
         //Email enter
-        driver.findElement(By.id("Email")).click();
-        driver.findElement(By.id("Email")).clear();
-        driver.findElement(By.id("Email")).sendKeys("test3demoWeb#@mail.com");
+        type(By.id("Email"), "test3demoWeb#"+i+"@mail.com");
 
         //Password enter
-        driver.findElement(By.id("Password")).click();
-        driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("test3demoWeb#");
+        type(By.id("Password"), "test3demoWeb#");
 
         //Confirm password enter
-        driver.findElement(By.id("ConfirmPassword")).click();
-        driver.findElement(By.id("ConfirmPassword")).clear();
-        driver.findElement(By.id("ConfirmPassword")).sendKeys("test3demoWeb#");
+        type(By.id("ConfirmPassword"), "test3demoWeb#");
 
         //Click on Register button
-        driver.findElement(By.id("register-button")).click();
+        click(By.id("register-button"));
 
         //Click on Continue button
-        driver.findElement(By.xpath("//input[@class='button-1 register-continue-button']")).click();
-
-
+        click(By.xpath("//input[@class='button-1 register-continue-button']"));
     }
+
 }
