@@ -1,4 +1,4 @@
-package com.demo.tests;
+package com.phonebook.models;
 
 public class RegisterUser{
    private String email;

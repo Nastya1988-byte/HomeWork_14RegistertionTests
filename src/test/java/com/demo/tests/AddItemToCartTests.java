@@ -1,5 +1,6 @@
 package com.demo.tests;
 
+import com.phonebook.models.RegisterUser;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -7,17 +8,17 @@ import org.testng.annotations.Test;
 public class AddItemToCartTests extends TestBase {
     @BeforeMethod
     public void precondition() {
-        clickOnLoginLink();
-        fillLoginForm(new RegisterUser()
+        app.getUserLogin().clickOnLoginLink();
+        app.getUserLogin().fillLoginForm(new RegisterUser()
                 .setEmail("test345demoWeb#@mail.com")
                 .setPassword("test345demoWeb#"));
-        clickOnLoginButton();
+        app.getUserLogin().clickOnLoginButton();
     }
 
     @Test
     public void addToCardPositiveTest() {
-        addToCard();
-        Assert.assertTrue(isProductAdded());
+        app.getAdd().addToCard();
+        Assert.assertTrue(app.getAdd().isProductAdded());
     }
 
 }
