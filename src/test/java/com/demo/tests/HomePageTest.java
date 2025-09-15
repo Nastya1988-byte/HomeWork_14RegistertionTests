@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 
 public class HomePageTest extends TestBase {
 
-    @BeforeMethod
-    public void ensurePrecondition() {
-        if (!app.getHome().isHomePagePresent()) {
-            app.getHome().clickOnHomeElement();
-        }
-    }
+//    @BeforeMethod
+//    public void ensurePrecondition() {
+//        if (!app.getHome().isHomePagePresent()) {
+//            app.getHome().clickOnHomeElement();
+//        }
+//    }
 
     @Test
     public void isHomePagePresentTest() {

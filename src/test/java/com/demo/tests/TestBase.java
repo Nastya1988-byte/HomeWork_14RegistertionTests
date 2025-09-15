@@ -1,18 +1,20 @@
 package com.demo.tests;
 
 import com.phonebook.fw.ApplicationMeneger;
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.*;
 
 public class TestBase {
 
-    protected ApplicationMeneger app = new ApplicationMeneger();
+    protected ApplicationMeneger app = new ApplicationMeneger(System
+            .getProperty("browser", Browser.CHROME.browserName()));
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUP(){
         app.init();
     }
 
-    @AfterSuite
+    @AfterMethod(enabled = false)
     public void tearDown(){
         app.stop();
     }

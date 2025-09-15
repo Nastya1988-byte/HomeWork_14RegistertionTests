@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
 
-    @BeforeMethod
-    public void ensurePrecondition(){
-        if (!app.getUserRegister().isRegisterLinkPresent()){
-            app.getUserRegister().clickOnLogOutButton();
-        }
-    }
+//    @BeforeMethod
+//    public void ensurePrecondition(){
+//        if (!app.getUserRegister().isRegisterLinkPresent()){
+//            app.getUserRegister().clickOnLogOutButton();
+//        }
+//    }
     @Test(enabled = false)
     public void newUserRegistrationPositiveTest() {
 //        int i = (int)((System.currentTimeMillis()/1000)%3600);
@@ -20,9 +20,9 @@ public class CreateAccountTests extends TestBase {
         app.getUserRegister().fillRegisterLoginForm(new User()
                 .setName("Anastasiia")
                 .setLastName("Buch")
-                .setEmail("test345demoWeb#@mail.com")
-                .setPassword("test345demoWeb#")
-                .setConfirmPassword("test345demoWeb#"));
+                .setEmail("test3457demoWeb#@mail.com")
+                .setPassword("test3457demoWeb#")
+                .setConfirmPassword("test3457demoWeb#"));
         app.getUserRegister().clickOnRegisterButton();
         app.getUserRegister().clickOnContinueButton();
     }
