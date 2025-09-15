@@ -5,13 +5,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class ApplicationMeneger{
+public class ApplicationMeneger {
 
     WebDriver driver;
-        UserRegisterHelper userRegister;
-        LoginHelper userLogin;
-        AddToCardHelper add;
-        HomePageHalper home;
+    UserRegisterHelper userRegister;
+    LoginHelper userLogin;
+    AddToCardHelper add;
+    HomePageHelper home;
+    String browser;
+
+    public ApplicationMeneger() {
+        this.browser=browser;
+    }
+
 
     public void init() {
         driver = new ChromeDriver();
@@ -22,7 +28,7 @@ public class ApplicationMeneger{
         userRegister = new UserRegisterHelper(driver);
         userLogin = new LoginHelper(driver);
         add = new AddToCardHelper(driver);
-        home = new HomePageHalper(driver);
+        home = new HomePageHelper(driver);
     }
 
     public void stop() {
@@ -41,7 +47,7 @@ public class ApplicationMeneger{
         return add;
     }
 
-    public HomePageHalper getHome() {
+    public HomePageHelper getHome() {
         return home;
     }
 }

@@ -1,19 +1,18 @@
 package com.demo.tests;
 
 import com.phonebook.fw.ApplicationMeneger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 public class TestBase {
 
     protected ApplicationMeneger app = new ApplicationMeneger();
 
-    @BeforeMethod
+    @BeforeSuite
     public void setUP(){
         app.init();
     }
 
-    @AfterMethod(enabled = false)
+    @AfterSuite
     public void tearDown(){
         app.stop();
     }

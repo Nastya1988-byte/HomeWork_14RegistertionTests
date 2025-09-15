@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 public class AddItemToCartTests extends TestBase {
     @BeforeMethod
     public void precondition() {
+        if (!app.getUserLogin().isLoginLinkPresent()){
+            app.getUserLogin().clickOnLogOutButton();
+        }
         app.getUserLogin().clickOnLoginLink();
         app.getUserLogin().fillLoginForm(new RegisterUser()
                 .setEmail("test345demoWeb#@mail.com")

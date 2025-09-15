@@ -1,9 +1,10 @@
 package com.phonebook.fw;
 
+import com.phonebook.models.RegisterUser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginHelper extends BaseHalper{
+public class LoginHelper extends BaseHelper {
 
     public LoginHelper(WebDriver driver) {
         super(driver);
@@ -20,5 +21,12 @@ public class LoginHelper extends BaseHalper{
 
     public void clickOnLoginButton() {
         click(By.xpath("//input[@value='Log in']"));
+    }
+
+    public boolean isLoginLinkPresent() {
+        return isElementPresent(By.cssSelector("[href='/login']"));
+    }
+    public void clickOnLogOutButton() {
+        click(By.cssSelector("[href='/logout']"));
     }
 }

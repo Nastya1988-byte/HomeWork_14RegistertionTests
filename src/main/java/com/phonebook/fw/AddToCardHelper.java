@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class AddToCardHelper extends BaseHalper{
+public class AddToCardHelper extends BaseHelper {
 
     public AddToCardHelper(WebDriver driver) {
         super(driver);
